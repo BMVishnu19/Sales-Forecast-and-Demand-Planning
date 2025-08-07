@@ -57,8 +57,7 @@ The Power BI dashboard provides a dynamic and intuitive interface for business u
 
 This page provides a high-level overview of sales and forecast performance.
 
-- **Overall Insight:** The dashboard effectively communicates your key metrics at a glance. The clear separation of actual sales, forecasted sales, and overall forecast accuracy is a great way to start the dashboard. The **Average MAPE of 41.80%** suggests there's a significant opportunity to improve your forecast model's accuracy.
-
+- **Overall Insight:** The dashboard effectively communicates your key metrics at a glance. The clear separation of actual sales, forecasted sales, and overall forecast accuracy is a great way to start the dashboard. 
 - **Visual-Specific Insights:**
     - **KPI Cards:** The use of three distinct KPI cards is a great way to present key metrics. The color-coding helps differentiate them quickly.
     - **Line Chart (Aggregated Sales & Forecast Over Time):** This chart shows a clear downward trend in both actual and forecasted sales. This is a critical trend that should be investigated further.
