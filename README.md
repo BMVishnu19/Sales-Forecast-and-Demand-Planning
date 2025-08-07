@@ -54,35 +54,50 @@ The PostgreSQL database is the backbone of this project, ensuring data integrity
 The Power BI dashboard provides a dynamic and intuitive interface for business users to explore sales trends and forecast data without needing to write any code. It is directly connected to the PostgreSQL database.
 
 ### Executive Summary (Page 1)
+
 This page provides a high-level overview of sales and forecast performance.
-•	Overall Insight: The page effectively communicates your key metrics at a glance. The clear separation of actual sales, forecasted sales, and overall forecast accuracy is a great way to start the dashboard. The Average MAPE of 41.80% suggests there's a significant opportunity to improve your forecast model's accuracy.
-•	Visual-Specific Insights:
-o	KPI Cards: The use of three distinct KPI cards is a great way to present key metrics. The color-coding helps differentiate them quickly.
-o	Line Chart (Aggregated Sales & Forecast Over Time): This chart shows a clear downward trend in both actual and forecasted sales. This is a critical trend that should be investigated further.
-o	Bar Chart (Average MAPE by Category): The red color on the bars suggests that the forecast error is high across all categories. You should consider sorting this chart to immediately identify the categories with the highest error.
+
+- **Overall Insight:** The dashboard effectively communicates your key metrics at a glance. The clear separation of actual sales, forecasted sales, and overall forecast accuracy is a great way to start the dashboard. The **Average MAPE of 41.80%** suggests there's a significant opportunity to improve your forecast model's accuracy.
+
+- **Visual-Specific Insights:**
+    - **KPI Cards:** The use of three distinct KPI cards is a great way to present key metrics. The color-coding helps differentiate them quickly.
+    - **Line Chart (Aggregated Sales & Forecast Over Time):** This chart shows a clear downward trend in both actual and forecasted sales. This is a critical trend that should be investigated further.
+    - **Bar Chart (Average MAPE by Category):** The red color on the bars suggests that the forecast error is high across all categories. You should consider sorting this chart to immediately identify the categories with the highest error.
+
+---
 
 ### Forecast Deep Dive (Page 2)
-This page is designed for a detailed analysis of a single store_product_id series.
-•	Overall Insight: This page is well-designed for a drill-down analysis. The combination of key error metrics (MAE, MAPE, RMSE), a line chart, and a data table provides a complete view of a single series. The shaded confidence interval on the line chart is a great way to visualize the uncertainty of your forecast.
-•	Visual-Specific Insights:
-o	KPI Cards: The individual MAE, MAPE, and RMSE cards for the selected series are very effective. The values of 2.81K (MAE), 4.18K (MAPE), and 3.56K (RMSE) show the magnitude of your forecast errors for the selected series.
-o	Line Chart (Selected Series): The chart shows a good fit between the actual and forecasted sales. However, the forecast line seems to consistently slightly under-predict the actuals in some areas. This might indicate a slight bias in your model.
+
+This page is designed for a detailed analysis of a single `store_product_id` series.
+
+- **Overall Insight:** This page is well-designed for a drill-down analysis. The combination of key error metrics (MAE, MAPE, RMSE), a line chart, and a data table provides a complete view of a single series. The shaded confidence interval on the line chart is a great way to visualize the uncertainty of your forecast.
+
+- **Visual-Specific Insights:**
+    - **KPI Cards:** The individual MAE, MAPE, and RMSE cards for the selected series are very effective. The values of **2.81K (MAE), 4.18K (MAPE), and 3.56K (RMSE)** show the magnitude of your forecast errors for the selected series.
+    - **Line Chart (Selected Series):** The chart shows a good fit between the actual and forecasted sales. However, the forecast line seems to consistently slightly under-predict the actuals in some areas. This might indicate a slight bias in your model.
+
+---
 
 ### Forecast Accuracy Analysis (Page 3)
+
 This page is intended for analyzing forecast accuracy across different stores and products.
-•	Overall Insight: This page provides a solid foundation for understanding the drivers of your forecast error. The combination of a bar chart and a scatter plot allows you to analyze your forecast accuracy from multiple angles.
-•	Visual-Specific Insights:
-o	Bar Chart (Average MAPE by Store ID): This chart shows that some stores have a much higher MAPE than others. Sorting this chart in descending order by MAPE would make it much easier to identify the stores that need the most attention.
-o	Scatter Plot (Actuals vs. Forecasts): The data points on this chart show a strong positive correlation between actual and forecasted sales. However, the points are not perfectly aligned with a 1:1 trend line, indicating that the model has some level of error. Most of the points seem to be slightly above the 1:1 trend line, which suggests a slight tendency for your model to under-forecast.
-o	Data Table: The table at the bottom provides a detailed view of the forecast accuracy for different categories and products. This is a great way to supplement the visuals and get a deeper understanding of the data.
+
+- **Overall Insight:** This page provides a solid foundation for understanding the drivers of your forecast error. The combination of a bar chart and a scatter plot allows you to analyze your forecast accuracy from multiple angles.
+
+- **Visual-Specific Insights:**
+    - **Bar Chart (Average MAPE by Store ID):** This chart shows that some stores have a much higher MAPE than others. Sorting this chart in descending order by MAPE would make it much easier to identify the stores that need the most attention.
+    - **Scatter Plot (Actuals vs. Forecasts):** The data points on this chart show a strong positive correlation between actual and forecasted sales. 
+    - **Data Table:** The table at the bottom provides a detailed view of the forecast accuracy for different categories and products. This is a great way to supplement the visuals and get a deeper understanding of the data.
+
+---
 
 ### Forecast Drivers Analysis (Page 4)
+
 This page is dedicated to a more in-depth look at what contributes to forecast error.
-•	Overall Insight: This page is well-designed to help you understand the root causes of your forecast errors. The mix of visuals provides a comprehensive view of how forecast accuracy varies across different stores, categories, and their contribution to the total error. The Average MAPE card at 41.80% again highlights the overall need for model improvement.
-•	Visual-Specific Insights:
-o	Clustered Column Chart (Error by Store vs. Product Category): This visual shows a clear distribution of error across different stores and product categories. It reveals which store-category combinations have the highest errors. The large red columns for store_id S001 and S002 indicate that these stores have particularly high errors.
-o	Funnel Chart (Error Distribution by Product Category): This chart shows that the forecast errors are distributed fairly evenly across categories. The slight variations can be a starting point for a deeper dive into a specific category.
-o	Waterfall Chart (Contribution of Error by Store): This chart clearly highlights the stores that contribute the most to the total forecast error. The large, green columns indicate which stores have the highest error contribution. This is an excellent visual for prioritizing which stores to investigate first.
 
-Here are the key business questions that your dashboard, as a whole, can answer, broken down by page and visualization.
+- **Overall Insight:** This page is well-designed to help you understand the root causes of your forecast errors. The mix of visuals provides a comprehensive view of how forecast accuracy varies across different stores, categories, and their contribution to the total error. The **Average MAPE card at 41.80%** again highlights the overall need for model improvement.
 
+- **Visual-Specific Insights:**
+    - **Clustered Column Chart (Error by Store vs. Product Category):** This visual shows a clear distribution of error across different stores and product categories. It reveals which store-category combinations have the highest errors. The large red columns for `store_id` **S001** and **S002** indicate that these stores have particularly high errors.
+    - **Funnel Chart (Error Distribution by Product Category):** This chart shows that the forecast errors are distributed fairly evenly across categories. The slight variations can be a starting point for a deeper dive into a specific category.
+    - **Waterfall Chart (Contribution of Error by Store):** This chart clearly highlights the stores that contribute the most to the total forecast error. The large, green columns indicate which stores have the highest error contribution. This is an excellent visual for prioritizing which stores to investigate first.
